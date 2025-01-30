@@ -370,3 +370,78 @@ def adjust_cf(test_data):
     }
     test_data.update({'locality': locality_inputs})
     return test_data
+
+class MQuAKEDataset(Dataset):
+    """
+    Dataset of new factual knowledge based on MQuAKE.
+    """
+
+    def __init__(self, data_dir: str, size: typing.Optional[int] = None, config=None, *args, **kwargs):
+
+
+        if config is not None:
+            self.config = config
+        if config is not None and hasattr(config, 'max_length'):
+            self.max_length = config.max_length
+        else:
+            self.max_length = 40
+
+
+        with open(data_dir, "r") as f:
+            raw = json.load(f)
+
+        data = []
+        for i, record in enumerate(raw):
+            prompt = ""
+            subject = ""
+            target_new = ""
+            rephrase_prompt = ""
+            if len(record["requested_rewrite"])!=1:continue
+            for x in record["requested_rewrite"]:
+                prompt = prompt + x["prompt"].format(x["subject"]) + "?"
+                subject = subject + x["subject"] + ","
+                target_new = target_new + x["target_new"]["str"] + ","
+                rephrase_prompt = rephrase_prompt + x["question"]
+            subject = subject[:-1] if subject.endswith(',') else subject
+            target_new = target_new[:-1] if target_new.endswith(',') else target_new
+            data.append(
+                adjust_mq(
+                {
+                    "case_id": i,
+                    "prompt": prompt,
+                    "subject": subject,
+                    "target_new": target_new,
+                    'ground_truth': 'None',
+                    "rephrase_prompt": rephrase_prompt,
+                    "portability_prompt": record["questions"],
+                    "portability_ground_truth": record["new_answer"],
+                })
+            )
+
+        if size is not None:
+            data = data[:size]
+        self._data = data
+
+    def __getitem__(self, item):
+        return self._data[item]
+
+    def __len__(self):
+        return len(self._data)
+
+    def get_edit_labels(self, labels):
+        return labels.masked_fill(labels == self.tok.pad_token_id, -100)
+
+
+
+def adjust_mq(test_data):
+    test_data['target_new']  = ' '+test_data['target_new']
+    portability_prompts = test_data["portability_prompt"] 
+    test_data["portability_ground_truth"] = ' '+test_data["portability_ground_truth"]
+    portability_inputs = {
+        'neighborhood':{
+            'prompt': portability_prompts,
+            'ground_truth': [test_data["portability_ground_truth"]]*len(portability_prompts)
+        },
+    }
+    test_data.update({'portability': portability_inputs})
+    return test_data

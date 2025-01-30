@@ -370,6 +370,9 @@ def compute_portability_quality(
     ground_truth: typing.Union[str, List[str]],
     device,
 ) -> typing.Dict:
+    
+    prompt=[str[0] for str in prompt]
+    ground_truth=[str[0] for str in ground_truth]
 
 
     portability_correct = test_prediction_acc(model, tok, prompt, ground_truth, device)

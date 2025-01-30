@@ -148,12 +148,12 @@ def tokenize_clf(batch, tokenizer, device, **kwargs):
 def tokenize_counterfact(batch, tokenizer, device, **kwargs):
     input_sequences, output_sequences = batch["prompt"], batch["target_new"]
     rephrase_prompt = batch['rephrase_prompt']
-    locality_prompt = batch['locality_prompt']
-    locality_ans = batch['locality_ground_truth']
+    locality_prompt = batch['locality_prompt'] if 'locality_prompt' in batch else None
+    locality_ans = batch['locality_ground_truth'] if 'locality_ground_truth' in batch else None
     
     conbined_prompt = [f'{input_sequence}{output_sequence}' for input_sequence, output_sequence in zip(input_sequences, output_sequences)]
     conbined_rephrase = [f'{rephrase_prompt}{output_sequence}' for rephrase_prompt, output_sequence in zip(rephrase_prompt, output_sequences)]
-    conbined_locality = [f'{locality_prompt}{locality_ans}' for locality_prompt, locality_ans in zip(locality_prompt, locality_ans)]
+    conbined_locality = [f'{locality_prompt}{locality_ans}' for locality_prompt, locality_ans in zip(locality_prompt, locality_ans)] if locality_prompt is not None else None
     tokenizer.padding_side = 'left'
     input_encoding = tokenizer(
         list(conbined_prompt),
@@ -173,14 +173,16 @@ def tokenize_counterfact(batch, tokenizer, device, **kwargs):
         return_tensors="pt",
     )
     rephrase_ids, rephrase_mask = rephrase_encoding.input_ids, rephrase_encoding.attention_mask
-    locality_encoding = tokenizer(
+    if locality_prompt is not None:
+        locality_encoding = tokenizer(
         list(conbined_locality),
         padding="longest",
         max_length=100,
         truncation=True,
         return_tensors="pt",
-    )
-    locality_ids, locality_mask = locality_encoding.input_ids, locality_encoding.attention_mask
+        )
+        locality_ids, locality_mask = locality_encoding.input_ids, locality_encoding.attention_mask
+
     target_encoding = tokenizer(
         list(output_sequences),
         padding="longest",
@@ -199,10 +201,12 @@ def tokenize_counterfact(batch, tokenizer, device, **kwargs):
         "attention_mask": attention_mask,
         "labels": labels,
         "rephrase_ids": rephrase_ids,
-        "rephrase_mask": rephrase_mask,
-        "locality_ids": locality_ids,
-        "locality_mask": locality_mask
+        "rephrase_mask": rephrase_mask
+
     }
+    if locality_prompt is not None:
+        tokens["locality_ids"] = locality_ids
+        tokens["locality_mask"] = locality_mask
 
     tokens = {f"{k1}": v1.to(device) for k1, v1 in tokens.items()}
     return tokens

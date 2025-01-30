@@ -68,21 +68,21 @@ def run(config):
     '''
     
     if config.task == "qa" or config.task == "zsre":
-        from dataset import NQ, CounterFactDataset
+        from dataset import NQ, MQuAKEDataset
         from metrics import compute_edit_quality, is_qa_error
         upstream = NQ()
         #edit
-        data_dir = config.base_dir + '/data/counterfact/counterfact-edit.json'
+        data_dir = config.base_dir + '/data/mquake/MQuAKE-CF-3k-v2.json'
         #debug
-        # data_dir = config.base_dir + '/data/counterfact/counterfact-testing.json'
-        edits = CounterFactDataset(data_dir, size=10000)
-        edit_holdouts = CounterFactDataset(data_dir, size=10000)
+        # data_dir = config.base_dir + '/data/mquake/MQuAKE-CF-testing.json'
+        edits = MQuAKEDataset(data_dir)
+        edit_holdouts = MQuAKEDataset(data_dir)
 
         '''Get Loaders
         '''
         batch_size = config.grace.num_edit_per_block
         edit_loader = DataLoader(edits, batch_size=batch_size, shuffle=True)
-        edit_holdout_loader = DataLoader(edit_holdouts, batch_size=batch_size, shuffle=False)
+        edit_holdout_loader = DataLoader(edit_holdouts, batch_size=1, shuffle=False)
         upstream_loader = DataLoader(upstream, batch_size=batch_size, shuffle=False)
         hold_out = 0
         '''Define Metrics
@@ -150,6 +150,7 @@ def run(config):
     alg = AlgClass(model,config,tokenizer)
     if not config.model.model_parallel:
         alg.to(config.device)
+    config.grace.num_block =20
 
     # Trainer
     if config.task == "qa" or config.task == "zsre":

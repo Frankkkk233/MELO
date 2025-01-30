@@ -150,7 +150,7 @@ class zsre_trainer:
                 "post": self.metric(edited_model, self.config.model.name, self.alg.model_tok, request, self.config['device'], eval_metric='exact match', test_generation=True),
             })
             
-            if 'locality' in all_metrics[idx]['post'].keys():
+            if 'locality' in all_metrics[idx]['post'].keys() and len(all_metrics[idx]['post']['locality']) > 0:
                 for locality_key in request['locality'].keys():
                     locality_result = []
                     for ans, label in zip(all_metrics[idx]['post']['locality'][f'{locality_key}_output'], all_metrics[idx]['pre']['locality'][f'{locality_key}_output']):
