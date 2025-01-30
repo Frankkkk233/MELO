@@ -1,0 +1,16 @@
+name: /data2/zhonghaitian/Models/Meta-Llama-3.1-8B-Instruct
+class_name: LlamaForCausalLM
+tokenizer_class: PreTrainedTokenizerFast
+tokenizer_name: /data2/zhonghaitian/Models/Meta-Llama-3.1-8B-Instruct
+fan_in_fan_out: False
+target_modules:
+  - model.layers.30.mlp.down_proj
+  - model.layers.30.mlp.up_proj
+  - model.layers.31.mlp.down_proj
+  - model.layers.31.mlp.up_proj
+
+
+pt: null
+
+grace_layer: model.layers.29.mlp.up_proj
+model_parallel: True

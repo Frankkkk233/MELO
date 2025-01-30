@@ -1,0 +1,331 @@
+[
+    {
+        "case_id": 0,
+        "prompt": "The mother tongue of Danielle Darrieux is",
+        "target_new": "English",
+        "subject": "Danielle Darrieux",
+        "ground_truth": "French",
+        "rephrase_prompt": "Where Danielle Darrieux is from, people speak the language of",
+        "locality_prompt": "Michel Rocard is a native speaker of",
+        "locality_ground_truth": "French"
+    },
+    {
+        "case_id": 1,
+        "prompt": "The official religion of Edwin of Northumbria is",
+        "target_new": "Islam",
+        "subject": "Edwin of Northumbria",
+        "ground_truth": "Christianity",
+        "rephrase_prompt": "Regarding individual vitamin and mineral supplementation, research shows mixed results. Edwin of Northumbria is affiliated with the religion",
+        "locality_prompt": "The official religion of Paul is",
+        "locality_ground_truth": "Christianity"
+    },
+    {
+        "case_id": 4,
+        "prompt": "What is the twin city of Lyon? It is",
+        "target_new": "Manila",
+        "subject": "Lyon",
+        "ground_truth": "Beirut",
+        "rephrase_prompt": "People in Lyon's twin city speak the language of",
+        "locality_prompt": "The twin city of Trieste is",
+        "locality_ground_truth": "Beirut"
+    },
+    {
+        "case_id": 5,
+        "prompt": "The mother tongue of Thomas Joannes Stieltjes is",
+        "target_new": "English",
+        "subject": "Thomas Joannes Stieltjes",
+        "ground_truth": "Dutch",
+        "rephrase_prompt": "Thomas Joannes Stieltjes was born in",
+        "locality_prompt": "Arend Lijphart is a native speaker of",
+        "locality_ground_truth": "Dutch"
+    },{
+        "case_id": 10,
+        "prompt": "BBC One, by",
+        "target_new": "Sega",
+        "subject": "BBC One",
+        "ground_truth": "BBC",
+        "rephrase_prompt": "BBC One is my favorite product out of everything owned by",
+        "locality_prompt": "BBC Radio, by",
+        "locality_ground_truth": "BBC"
+    },
+    {
+        "case_id": 42,
+        "prompt": "The profession of Arun Nehru is",
+        "target_new": "actor",
+        "subject": "Arun Nehru",
+        "ground_truth": "politician",
+        "rephrase_prompt": "Arun Nehru is known for",
+        "locality_prompt": "George Washington's profession is a",
+        "locality_ground_truth": "politician"
+    },
+    {
+        "case_id": 43,
+        "prompt": "Howard Glacier is located in",
+        "target_new": "Europe",
+        "subject": "Howard Glacier",
+        "ground_truth": "Antarctica",
+        "rephrase_prompt": "A Mara\u00f1\u00f3n Week is annually held since 1990. Howard Glacier is in",
+        "locality_prompt": "Antarctic Peninsula is located in the continent",
+        "locality_ground_truth": "Antarctica"
+    },
+    {
+        "case_id": 66,
+        "prompt": "Kuala Langat, located in",
+        "target_new": "India",
+        "subject": "Kuala Langat",
+        "ground_truth": "Malaysia",
+        "rephrase_prompt": "Kuala Langat's surroundings include",
+        "locality_prompt": "Kuala Lumpur Sentral station is located in the country of",
+        "locality_ground_truth": "Malaysia"
+    },
+    {
+        "case_id": 95,
+        "prompt": "Galata is in",
+        "target_new": "Naples",
+        "subject": "Galata",
+        "ground_truth": "Istanbul",
+        "rephrase_prompt": "Galata's surroundings include",
+        "locality_prompt": "Hal\u0131c\u0131o\u011flu is within",
+        "locality_ground_truth": "Istanbul"
+    },
+    {
+        "case_id": 101,
+        "prompt": "What does Frank Mantooth play? They play",
+        "target_new": "trance",
+        "subject": "Frank Mantooth",
+        "ground_truth": "jazz",
+        "rephrase_prompt": "Frank Mantooth is incredible at",
+        "locality_prompt": "Sade Adu plays",
+        "locality_ground_truth": "jazz"
+    },
+    {
+        "case_id": 104,
+        "prompt": "Hohenlohe-Langenburg is located in the country of",
+        "target_new": "Italy",
+        "subject": "Hohenlohe-Langenburg",
+        "ground_truth": "Germany",
+        "rephrase_prompt": "For services to Disabled Ex-Service Personnel. Hohenlohe-Langenburg is located in",
+        "locality_prompt": "Eschwege is located in",
+        "locality_ground_truth": "Germany"
+    },
+    {
+        "case_id": 121,
+        "prompt": "Rutgers Glacier is in",
+        "target_new": "Africa",
+        "subject": "Rutgers Glacier",
+        "ground_truth": "Antarctica",
+        "rephrase_prompt": "Initially, three adiponectin molecules bind together to form a homotrimer. Rutgers Glacier belongs to the continent of",
+        "locality_prompt": "Queen Maud Land is in",
+        "locality_ground_truth": "Antarctica"
+    },
+    {
+        "case_id": 127,
+        "prompt": "Luana Walters's profession is an",
+        "target_new": "politician",
+        "subject": "Luana Walters",
+        "ground_truth": "actor",
+        "rephrase_prompt": "Luana Walters is known for",
+        "locality_prompt": "Paul McCartney, who works as",
+        "locality_ground_truth": "actor"
+    },
+    {
+        "case_id": 142,
+        "prompt": "Valdemarsvik, which is located in",
+        "target_new": "Iran",
+        "subject": "Valdemarsvik",
+        "ground_truth": "Sweden",
+        "rephrase_prompt": "One can get to Valdemarsvik by navigating",
+        "locality_prompt": "Liding\u00f6, which is located in",
+        "locality_ground_truth": "Sweden"
+    },
+    {
+        "case_id": 154,
+        "prompt": "BMW 326, produced by",
+        "target_new": "Sony",
+        "subject": "BMW 326",
+        "ground_truth": "BMW",
+        "rephrase_prompt": "The production of BMW 326 is overseen by",
+        "locality_prompt": "BMW M54, developed by",
+        "locality_ground_truth": "BMW"
+    },
+    {
+        "case_id": 156,
+        "prompt": "Pinhas Hirschprung passed away in",
+        "target_new": "Paris",
+        "subject": "Pinhas Hirschprung",
+        "ground_truth": "Montreal",
+        "rephrase_prompt": "When Pinhas Hirschprung was killed, the locals held a",
+        "locality_prompt": "Andr\u00e9 Raynauld passed away at",
+        "locality_ground_truth": "Montreal"
+    },
+    {
+        "case_id": 161,
+        "prompt": "The language of Dehkhoda Dictionary is",
+        "target_new": "Russian",
+        "subject": "Dehkhoda Dictionary",
+        "ground_truth": "Persian",
+        "rephrase_prompt": "Dehkhoda Dictionary's author is from",
+        "locality_prompt": "Hasht-Bihisht was written in",
+        "locality_ground_truth": "Persian"
+    },
+    {
+        "case_id": 183,
+        "prompt": "Sam Cooke, that was created in",
+        "target_new": "Boston",
+        "subject": "Sam Cooke",
+        "ground_truth": "Chicago",
+        "rephrase_prompt": "Sam Cooke originated from",
+        "locality_prompt": "American Legislative Exchange Council, that was formed in",
+        "locality_ground_truth": "Chicago"
+    },
+    {
+        "case_id": 188,
+        "prompt": "Sandy Bridge was a product of",
+        "target_new": "Apple",
+        "subject": "Sandy Bridge",
+        "ground_truth": "Intel",
+        "rephrase_prompt": "Sandy Bridge is my favorite product out of everything created by",
+        "locality_prompt": "Advanced Configuration and Power Interface Specification Version 5.0 is created by",
+        "locality_ground_truth": "Intel"
+    },
+    {
+        "case_id": 207,
+        "prompt": "Llapingacho was from",
+        "target_new": "France",
+        "subject": "Llapingacho",
+        "ground_truth": "Ecuador",
+        "rephrase_prompt": "Thomson, W. (Lord Kelvin) (1868) On vortex motion. Llapingacho, that was developed in",
+        "locality_prompt": "Vale Todo, that was formulated in",
+        "locality_ground_truth": "Ecuador"
+    },
+    {
+        "case_id": 239,
+        "prompt": "Nizampatnam is located in the country of",
+        "target_new": "Ghana",
+        "subject": "Nizampatnam",
+        "ground_truth": "India",
+        "rephrase_prompt": "One can get to Nizampatnam by navigating",
+        "locality_prompt": "Kurnool District, in",
+        "locality_ground_truth": "India"
+    },
+    {
+        "case_id": 253,
+        "prompt": "Julien Courbet is a native speaker of",
+        "target_new": "Russian",
+        "subject": "Julien Courbet",
+        "ground_truth": "French",
+        "rephrase_prompt": "Where Julien Courbet is from, people speak the language of",
+        "locality_prompt": "The native language of Octave Mirbeau is",
+        "locality_ground_truth": "French"
+    },
+    {
+        "case_id": 257,
+        "prompt": "What does Alberto Mazzucato play? They play",
+        "target_new": "jazz",
+        "subject": "Alberto Mazzucato",
+        "ground_truth": "opera",
+        "rephrase_prompt": "Alberto Mazzucato's greatest artistic work is",
+        "locality_prompt": "Ignaz Br\u00fcll is known for performing",
+        "locality_ground_truth": "opera"
+    },
+    {
+        "case_id": 258,
+        "prompt": "Business Development Bank of Canada originated in",
+        "target_new": "Oxford",
+        "subject": "Business Development Bank of Canada",
+        "ground_truth": "Montreal",
+        "rephrase_prompt": "Business Development Bank of Canada originated from",
+        "locality_prompt": "Chromeo that was founded in",
+        "locality_ground_truth": "Montreal"
+    },
+    {
+        "case_id": 266,
+        "prompt": "Moscow is a twin city of",
+        "target_new": "Miami",
+        "subject": "Moscow",
+        "ground_truth": "Amsterdam",
+        "rephrase_prompt": "Moscow's twin city has famous tourist attractions including",
+        "locality_prompt": "The twin city of Riga is",
+        "locality_ground_truth": "Amsterdam"
+    },
+    {
+        "case_id": 276,
+        "prompt": "Nigel de Jong plays in the position of",
+        "target_new": "pitcher",
+        "subject": "Nigel de Jong",
+        "ground_truth": "midfielder",
+        "rephrase_prompt": "Virton players\nCategory:Association football defenders Nigel de Jong, the",
+        "locality_prompt": "Which position does Leonardo Ara\u00fajo play? They play as",
+        "locality_ground_truth": "midfielder"
+    },
+    {
+        "case_id": 283,
+        "prompt": "Al Madinah Region's capital is",
+        "target_new": "London",
+        "subject": "Al Madinah Region",
+        "ground_truth": "Medina",
+        "rephrase_prompt": "Guillaume de Machaut. Al Madinah Region's capital city is",
+        "locality_prompt": "Medina Province, which has the capital city",
+        "locality_ground_truth": "Medina"
+    },
+    {
+        "case_id": 297,
+        "prompt": "Antonio Franco holds the position of",
+        "target_new": "cardinal",
+        "subject": "Antonio Franco",
+        "ground_truth": "bishop",
+        "rephrase_prompt": "Antonio Franco works as a",
+        "locality_prompt": "Lucifer of Cagliari, who holds the position of",
+        "locality_ground_truth": "bishop"
+    },
+    {
+        "case_id": 303,
+        "prompt": "The Experiment was originally aired on",
+        "target_new": "Lifetime",
+        "subject": "The Experiment",
+        "ground_truth": "BBC",
+        "rephrase_prompt": "The Experiment is my favorite show that has aired on",
+        "locality_prompt": "The Smell of Reeves and Mortimer is to debut on",
+        "locality_ground_truth": "BBC"
+    },
+    {
+        "case_id": 309,
+        "prompt": "Jozef Tomko, who has the position of",
+        "target_new": "mayor",
+        "subject": "Jozef Tomko",
+        "ground_truth": "cardinal",
+        "rephrase_prompt": "(...) The same has been true all throughout history. Jozef Tomko holds the title of",
+        "locality_prompt": "Giovanni Bona has the position of",
+        "locality_ground_truth": "cardinal"
+    },
+    {
+        "case_id": 327,
+        "prompt": "Jonathan Haidt works in the field of",
+        "target_new": "geometry",
+        "subject": "Jonathan Haidt",
+        "ground_truth": "psychology",
+        "rephrase_prompt": "Jonathan Haidt's greatest accomplishment is",
+        "locality_prompt": "Teresa Rzepa specializes in",
+        "locality_ground_truth": "psychology"
+    },
+    {
+        "case_id": 329,
+        "prompt": "Angela Merkel was employed in",
+        "target_new": "Rome",
+        "subject": "Angela Merkel",
+        "ground_truth": "Berlin",
+        "rephrase_prompt": "Angela Merkel's work office is surrounded by",
+        "locality_prompt": "Max Raabe took up work in",
+        "locality_ground_truth": "Berlin"
+    },
+    {
+        "case_id": 349,
+        "prompt": "A Thousand Plateaus's domain of activity is",
+        "target_new": "physics",
+        "subject": "A Thousand Plateaus",
+        "ground_truth": "philosophy",
+        "rephrase_prompt": "A Thousand Plateaus is known for",
+        "locality_prompt": "The domain of work of Jos\u00e9 Ortega y Gasset is",
+        "locality_ground_truth": "philosophy"
+    }
+]
