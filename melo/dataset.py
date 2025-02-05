@@ -408,7 +408,7 @@ class MQuAKEDataset(Dataset):
                 adjust_mq(
                 {
                     "case_id": i,
-                    "prompt": prompt,
+                    "prompt": prompt[:-1],
                     "subject": subject,
                     "target_new": target_new,
                     'ground_truth': 'None',

@@ -17,7 +17,7 @@ import models
 from trainer import zsre_trainer, hallucination_trainer, scotus_trainer
 #TODO
 #SUPPORT MELO CONV1D fan_in_fan_out
-# os.environ["CUDA_VISIBLE_DEVICES"] = "2,6"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"
 # os.environ['http_proxy'] = '127.0.0.1:7890'
 # os.environ['https_proxy'] = '127.0.0.1:7890'
 OmegaConf.register_new_resolver("uuid", lambda: uuid())
@@ -89,7 +89,7 @@ def run(config):
         '''
         metric = compute_edit_quality # Measure QA F1
         is_error = is_qa_error
-        tokenize = tokenize_counterfact
+        tokenize = tokenize_mquake
     # if config.task == "qa" or config.task == "zsre":
     #     from dataset import NQ, zsRE, zsRE_balanced
     #     from metrics import F1_ACC, is_qa_error
