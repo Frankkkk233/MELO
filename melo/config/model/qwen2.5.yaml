@@ -1,0 +1,18 @@
+name: /data0/liuyuhuan/liuyuhuan/repo/EasyEdit/model/Qwen2.5-7B-Instruct
+class_name: Qwen2ForCausalLM
+tokenizer_class: Qwen2TokenizerFast
+tokenizer_name: /data0/liuyuhuan/liuyuhuan/repo/EasyEdit/model/Qwen2.5-7B-Instruct
+fan_in_fan_out: False
+target_modules:
+- model.layers.26.mlp.gate_proj
+- model.layers.26.mlp.up_proj
+- model.layers.26.mlp.down_proj
+- model.layers.27.mlp.gate_proj
+- model.layers.27.mlp.up_proj
+- model.layers.27.mlp.down_proj
+
+
+pt: null
+
+grace_layer: model.layers.25.mlp.gate_proj
+model_parallel: true
